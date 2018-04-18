@@ -1,0 +1,26 @@
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+#create {
+    width: 400px;
+}
+
+.input {
+    display: inline-block;
+    width: 100px;
+    margin: 5px;
+}
+
+input {
+    display: inline-block;
+    width: 200px;
+}
+
+input:last-child {
+    width: 100px;
+    float: right;
+    margin: 10px 80px 0 0;
+}

@@ -18,4 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('apps.manage_courses.urls')),
+    url(r'^create', include('apps.manage_courses.urls')),
+    url(r'^remove/(?P<id>\d+)', include('apps.manage_courses.urls')),
+    url(r'^destroy/(?P<id>\d+)', include('apps.manage_courses.urls')),
 ]

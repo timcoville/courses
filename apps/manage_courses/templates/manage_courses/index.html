@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Course Index</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'manage_courses/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="create">
+            <h1>Add a new course</h1>
+            <form action="/create" method="POST">
+            <span class="input">Name:</span> <input type="text" name="name"> <br>
+            <span class="input">Description:</span> <input type="text" name="desc"> <br>
+            <input type="submit" value="Add Course">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
