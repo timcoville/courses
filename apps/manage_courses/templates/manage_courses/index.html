@@ -13,10 +13,30 @@
         <div id="create">
             <h1>Add a new course</h1>
             <form action="/create" method="POST">
+            {% csrf_token %}
             <span class="input">Name:</span> <input type="text" name="name"> <br>
             <span class="input">Description:</span> <input type="text" name="desc"> <br>
             <input type="submit" value="Add Course">
             </form>
+        </div>
+        <div id="catalog">
+            <h2>Courses</h2>
+            <table>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for course in courses %}
+                <tr>
+                    <td class="small">{{course.name}}</td>
+                    <td class="small">{{course.desc}}</td>
+                    <td class="small">{{course.created_at}}</td>
+                    <td class="small"><a href="/remove/{{course.id}}">Remove</a></td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </body>
