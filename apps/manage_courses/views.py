@@ -18,9 +18,8 @@ def create(request):
     return redirect('/')
 
 def remove(request, id):
-    print id
-    return HttpResponse(id)
+    return render(request, "manage_courses/confirm.html", context = {'course': Course.objects.get(id = id)})
 
 def destroy(request, id):
-    print id
-    return HttpResponse(id)
+    Course.objects.get(id = id).delete()
+    return redirect('/')

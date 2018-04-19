@@ -18,10 +18,15 @@
             <span class="input">Description:</span> <input type="text" name="desc"> <br>
             <input type="submit" value="Add Course">
             </form>
+            {% if messages %}
+                {% for message in messages %}
+                <p class="small">{{ message }} </p>
+                {% endfor %}
+            {% endif %}
         </div>
         <div id="catalog">
             <h2>Courses</h2>
-            <table>
+            <table id="table">
                 <tr>
                     <th>Course Name</th>
                     <th>Description</th>
